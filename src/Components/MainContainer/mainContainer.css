@@ -1,6 +1,6 @@
 .mainContainer{
-    max-width: 1840px;
-    /* padding-inline: 25px; */
+    max-width: 1750px;
+    padding-inline: 25px;
     margin-inline: auto;
-    margin-block: 80px;
+    margin-block: 90px 40px;
 }

@@ -14,8 +14,8 @@ const GalleryPage = () => {
   return (
     <>
       <MainContainer>    
-          <div className="gallery-page">
-            <h1 className="gallery-title">معرض الصور</h1>
+          <div className="GalleryPage">
+            <h1 className="galleryTitle">معرض الصور</h1>
             <GalleryItems 
               items={filteredItems} 
               shuffle={false} 

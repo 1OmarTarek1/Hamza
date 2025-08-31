@@ -2,12 +2,17 @@ import PropTypes from 'prop-types';
 import './TypeFilter.css';
 
 const TypeFilter = ({ types, selectedType, onTypeSelect }) => {
+  const handleClick = (type) => {
+    onTypeSelect(type);
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  };
+
   return (
     <div className="type-filter">
       <div className="filter-buttons">
         <button
           className={selectedType === 'all' ? 'active' : ''}
-          onClick={() => onTypeSelect('all')}
+          onClick={() => handleClick('all')}
           type="button"
         >
           الكل
@@ -16,7 +21,7 @@ const TypeFilter = ({ types, selectedType, onTypeSelect }) => {
           <button
             key={type.id}
             className={selectedType === type.id ? 'active' : ''}
-            onClick={() => onTypeSelect(type.id)}
+            onClick={() => handleClick(type.id)}
             type="button"
           >
             {type.name}

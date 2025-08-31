@@ -2,7 +2,7 @@
   background: var(--card-bg);
   border-radius: 12px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease-in-out;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -10,6 +10,16 @@
   padding: 10px 10px 10px 10px;
   cursor: default;
 }
+.InventoryPage 
+.card-spotlight{
+  transition: all .3s ease-in-out;
+}
+.card-spotlight:has(.InventoryCard):hover{
+  transform: scale(1.02);
+
+}
+
+
 
 .InventoryCard .CardImgWrapper {
   position: relative;
@@ -21,6 +31,7 @@
 }
 
 .InventoryCard .imgContent {
+  z-index: 1;
   transition: all .3s ease-in-out;
   opacity: .7;
 }
@@ -37,8 +48,9 @@
   object-fit: cover;
   transition: all 0.3s ease;
   opacity: 1;
+  cursor: pointer;
 }
-.InventoryCard:hover .card-image {
+.InventoryCard .card-image:hover {
   transform: scale(1.1);
 }
 
@@ -158,6 +170,7 @@
   position: absolute;
   top: 30%;
   right: 5px;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   gap: 3px !important;

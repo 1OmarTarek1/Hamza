@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <I18nextProvider i18n={i18n}>
     <LanguageProvider>
       <ThemeProvider>
-        <BrowserRouter>
+        <BrowserRouter basename='/Hamza'>
           <App />
         </BrowserRouter>
       </ThemeProvider>

@@ -26,6 +26,7 @@
 /* Default font fallback */
 html {
   font-family: 'Open Sans', sans-serif;
+  /* overflow-y: scroll; يثبت الاسكرول بار حتى لو مش محتاج */
 }
 
 /* لغة عربية */

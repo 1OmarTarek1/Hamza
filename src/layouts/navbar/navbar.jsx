@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { IoCallOutline, IoHomeOutline } from "react-icons/io5";
-import { IoAppsOutline } from "react-icons/io5";
+import { IoCallOutline, IoHomeOutline, IoImagesOutline } from "react-icons/io5";
 import { FiUsers } from "react-icons/fi";
 import LanguageToggleBtn from '../../Components/LanguageToggleBtn/LanguageToggleBtn';
 import HamburgerBtn from '../../Components/HamburgerBtn/HamburgerBtn';
@@ -80,7 +79,7 @@ const Navbar = () => {
           </li>
           <li className="navItem">
             <NavLink to="/GalleryPage" className="navLink" onClick={() => setIsOpen(false)}>
-              <span className="linkIcn"><IoAppsOutline /></span>
+              <span className="linkIcn"><IoImagesOutline /></span>
               <span>{t("navbar.products", { defaultValue: "Products" })}</span>
             </NavLink>
           </li>
