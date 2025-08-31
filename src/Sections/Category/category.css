@@ -1,0 +1,29 @@
+.categoryContainer {
+  margin-block: 2rem;
+  padding: 1rem;
+  border: 1px solid #dddddd65;
+  border-radius: 15px;
+  height: 700px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  cursor: grab;
+  overscroll-behavior: contain ;
+  overflow: hidden;
+}
+
+
+.categoryContainer::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+
+.dragging {
+  cursor: grabbing;
+  user-select: none;     /* منع تحديد النص أثناء السحب */
+}
+
+/* اختياري: أثناء السحب امنع النقر على الروابط لتفادي فتح اللينك بالغلط */
+.dragging a {
+  pointer-events: none;
+}

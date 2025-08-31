@@ -1,0 +1,67 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2c3e50;
+  --text-color: #333;
+  --bg-color: #060010;
+  --bg-component: #170d27;
+  --border-radius: 4px;
+  --transition: all 0.3s ease;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Default font fallback */
+html {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* لغة عربية */
+:lang(ar) {
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+/* لغة إنجليزية */
+:lang(en) {
+  font-family: 'Open Sans', sans-serif;
+  direction: ltr;
+  text-align: left;
+}
+
+/* Body */
+body {
+  font-family: inherit;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* Form elements */
+button, input, select, textarea {
+  font-family: inherit;
+}

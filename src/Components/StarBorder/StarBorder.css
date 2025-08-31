@@ -1,0 +1,47 @@
+.StarBorder {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 20px 25px;
+  width: fit-content;
+  height: 30px;
+  line-height: 0;
+  border-radius: 5px;
+  border: 1px solid #ffffff1f;
+  background: transparent; 
+  color: #ffffff57;
+  cursor: default;
+}
+
+/* pseudo element للإطار */
+.StarBorder::before {
+  content: "";
+  position: absolute;
+  inset: -1px; /* top/right/bottom/left = 0 */
+  padding: 1px; /* سمك الإطار */
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0) 25%,
+    rgba(255, 255, 255, 0.192) 50%,
+    rgba(255,255,255,0) 75%,
+    rgba(255,255,255,0) 100%
+  );
+  background-size: 200% 200%;
+  animation: glowBorder 6s linear infinite;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0); 
+  -webkit-mask-composite: xor; /* يخليها بس الإطار */
+  mask-composite: exclude;
+  pointer-events: none; /* عشان ما يمنعش الكلك على اللينكات */
+}
+
+@keyframes glowBorder {
+  0%   { background-position: 200% 0; }
+  50%  { background-position: 0 200%; }
+  100% { background-position: -200% 0; }
+}

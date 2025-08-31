@@ -1,0 +1,12 @@
+.GalleryPage {
+  padding: 2rem;
+  max-width: 1840px;
+  margin: 0 auto;
+}
+
+.GalleryPage :global(.imgWrapper) img {
+  cursor: auto;
+}
+
+
+/* Add your styles here */

@@ -1,0 +1,28 @@
+{
+  "app": {
+    "title": "Nayal Tex",
+    "subTitle": "Woven with love"
+
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Gallery",
+    "contact": "Contact",
+    "inventory": "Inventory"
+  },
+  "footer": {
+    "aboutUs": "About Us",
+    "aboutText": "Your trusted source for high-quality curtains and window treatments.",
+    "quickLinks": "Quick Links",
+    "contactUs": "Contact Us",
+    "email": "Email:",
+    "phone": "Phone:",
+    "address": "Address:",
+    "copyright": "  {{year}} All Rights Reserved"
+  },
+  "language": {
+    "en": "English",
+    "ar": "العربية"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "app": {
+    "title": "نيـــال تـكـس",
+    "subTitle": "نُـسِـجَتْ بِـحُـبْ"
+  },
+  "navbar": {
+    "home": "الرئيسية",
+    "about": "من نحن",
+    "products": "المعرض",
+    "contact": "تواصل",
+    "inventory": "المخزن"
+  },
+  "footer": {
+    "copyright": "© {{year}} جميع الحقوق محفوظة"
+  },
+  "language": {
+    "en": "English",
+    "ar": "العربية"
+  }
+}
