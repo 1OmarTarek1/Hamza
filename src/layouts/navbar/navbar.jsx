@@ -9,6 +9,7 @@ import ThemeToggle from "../../Components/ThemeToggle/ThemeToggle";
 import logo from "../../Assets/Images/Logo/logo2.png";
 import { AiOutlineShop } from 'react-icons/ai';
 import './navbar.css';
+import { GrDocumentPerformance } from 'react-icons/gr';
 
 const Navbar = () => {
   const { t } = useTranslation();
@@ -87,6 +88,14 @@ const Navbar = () => {
             <NavLink to="/InventoryPage" className="navLink" onClick={() => setIsOpen(false)}>
               <span className="linkIcn"><AiOutlineShop size={21}/></span>
               <span>{t("navbar.inventory")}</span>
+            </NavLink>
+          </li>
+          <li className="navItem">
+            <NavLink to="/Customers" className="navLink" onClick={() => setIsOpen(false)}>
+              <span className="linkIcn">
+                <GrDocumentPerformance size={18}/>
+              </span>
+              <span>{t("navbar.sales", { defaultValue: "Sales" })}</span>
             </NavLink>
           </li>
           <li className="navItem">

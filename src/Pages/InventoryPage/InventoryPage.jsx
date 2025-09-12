@@ -1,10 +1,11 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { MainContainer, InventoryCard, ColorFilter, TypeFilter, SpotlightCard } from '../../Components';
 import { getColorName } from '../../utils/colorUtils';
-import curtainTypes from '../../Data/inventoryData';
+import { useInventory } from '../../Context/InventoryContext';
 import './InventoryPage.css';
 
 const InventoryPage = () => {
+  const { inventory } = useInventory();
   const [selectedType, setSelectedType] = useState('all');
   const [selectedColor, setSelectedColor] = useState('all');
   const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -24,42 +25,43 @@ const InventoryPage = () => {
   }, []);
 
   // Get all unique colors from the data
-  const allColors = [...new Set(
-    curtainTypes.flatMap(type => 
-      type.shapes.flatMap(shape => 
-        shape.variants.map(v => ({
+  const allColors = useMemo(() => {
+    const colors = inventory.flatMap(type => 
+      (type.shapes || []).flatMap(shape => 
+        (shape.variants || []).map(v => ({
           code: v.code,
           name: v.name || getColorName(v.code)
         }))
       )
-    )
-  )].filter((color, index, self) => 
-    index === self.findIndex(c => c.code.toLowerCase() === color.code.toLowerCase())
-  );
+    );
+    const unique = colors.filter((color, index, self) => 
+      index === self.findIndex(c => c.code.toLowerCase() === color.code.toLowerCase())
+    );
+    return unique;
+  }, [inventory]);
 
   // Filter items based on selected type and color
-  const filteredTypes = curtainTypes
-    .filter(type => selectedType === 'all' || type.id === selectedType)
-    .map(type => {
-      const filteredShapes = type.shapes.filter(shape => {
-        return selectedColor === 'all' || 
-          shape.variants.some(v => v.code === selectedColor);
+  const filteredTypes = useMemo(() => {
+    const base = selectedType === 'all' ? inventory : inventory.filter(t => t.id === selectedType);
+    const mapped = base.map(type => {
+      const filteredShapes = (type.shapes || []).filter(shape => {
+        return selectedColor === 'all' || shape.variants.some(v => v.code === selectedColor);
       });
-
       if (filteredShapes.length === 0) return null;
-
       return {
         ...type,
         shapes: filteredShapes.map(shape => ({
           ...shape,
-          variants: shape.variants.map(variant => ({
+          // Mark variants that match color
+          variants: (shape.variants || []).map(variant => ({
             ...variant,
             isFiltered: selectedColor === 'all' || variant.code === selectedColor
           }))
         }))
       };
-    })
-    .filter(Boolean);
+    }).filter(Boolean);
+    return mapped;
+  }, [inventory, selectedType, selectedColor]);
 
   return (
     <div className="InventoryPage">
@@ -76,7 +78,7 @@ const InventoryPage = () => {
           </button>
           <div className="filter-row">
             <TypeFilter
-              types={curtainTypes}
+              types={inventory}
               selectedType={selectedType}
               onTypeSelect={setSelectedType}
             />
@@ -102,7 +104,10 @@ const InventoryPage = () => {
                         <InventoryCard 
                           item={{
                             ...shape,
-                            type: type.name
+                            type: type.name,
+                            typeId: type.id,
+                            typeName: type.name,
+                            shapeId: shape.id,
                           }} 
                         />
                       </SpotlightCard>

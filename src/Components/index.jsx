@@ -20,5 +20,15 @@ export { default as ShinyText } from './ShinyText/ShinyText';
 export { default as ElectricBorder } from './ElectricBorder/ElectricBorder';
 export { default as SpotlightCard } from './SpotlightCard/SpotlightCard';
 
+// Shared Components
+export { default as Toast } from './Shared/Toast/Toast';
+export { default as Modal } from './Shared/Modal/Modal';
+
+// Sales Components
+export { default as SalesFilters } from './Sales/SalesFilters/SalesFilters';
+export { default as SalesTable } from './Sales/SalesTable/SalesTable';
+export { default as EditSaleModal } from './Sales/EditSaleModal/EditSaleModal';
+export { default as ConfirmModal } from './Sales/ConfirmModal/ConfirmModal';
+
 // Export other components as they are added
 // export { default as ComponentName } from './ComponentName/ComponentName';

@@ -10,7 +10,7 @@ const HomeHeader = () => {
         <header className='homeHeader'>
             <LightRays
                 raysOrigin="top-center"
-                raysColor="gold"
+                raysColor="#00ffff"
                 raysSpeed={1.5}
                 lightSpread={0.8}
                 rayLength={2}

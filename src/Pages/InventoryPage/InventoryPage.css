@@ -7,11 +7,11 @@
   position: sticky;
   top: 10px;
   z-index: 1;
-  backdrop-filter: blur(5px) brightness(.7);
-  border-radius: 5px;
-  padding: .7rem .7rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  border: 1px solid #ffffff23;
+  backdrop-filter: blur(6px) brightness(.9);
+  border-radius: 10px;
+  padding: 10px 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  border: 1px solid var(--border-color);
 }
 
 .InventoryPage .filter-row {
@@ -19,7 +19,7 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  /* gap: 1.5rem; */
+  gap: 12px;
 }
 
 .InventoryPage .inventory-container {
@@ -31,20 +31,20 @@
   background: var(--card-bg);
   border-radius: 12px;
   margin-block: 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  border: 1px solid var(--border-color);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  /* border: 1px solid var(--border-color); */
 }
 
 .InventoryPage .type-title {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: #fff;
   margin: 0 0 0.5rem 0;
   font-weight: 600;
   text-align: center;
-  padding-block: 15px;
+  padding-block: 14px;
   background-color: var(--bg-component);
   border: 1px solid #392e4e !important;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 .InventoryPage .type-description {
@@ -81,22 +81,20 @@
 }
 
 .InventoryPage .clear-filters-btn {
-  background: var(--primary-color);
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 50px;
+  background: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 8px 12px;
+  border-radius: 8px;
   font-size: 0.95rem;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: border-color .2s ease, transform .2s ease;
 }
 
 .InventoryPage .clear-filters-btn:hover {
-  background: var(--primary-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border-color: var(--accent-color);
+  transform: translateY(-1px);
 }
 
 /* Responsive adjustments */
@@ -114,7 +112,7 @@
   left: 0;
   top: 0%;
   transform: translateX(-170%);
-  border: 1px solid #ffffff3b;
+  border: 1px solid var(--border-color);
   background-color: #392e4e;
   color: #fff;
   width: 42px;
@@ -123,10 +121,10 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 8px;
   font-size: 23px;
   transition: all .3s ease-in-out;
-  opacity: .5;
+  opacity: .7;
 }
 .InventoryPage .toggle-filter-btn:hover{
   opacity: 1;

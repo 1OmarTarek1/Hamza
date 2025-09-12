@@ -1,0 +1,50 @@
+.confirm-modal .confirm-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.confirm-message {
+  margin: 0;
+  color: var(--text-color);
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.confirm-modal .btn {
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  min-width: 80px;
+}
+
+.confirm-modal .btn.secondary {
+  background: var(--bg-component);
+  color: var(--text-color);
+}
+
+.confirm-modal btn.secondary:hover {
+  background: var(--muted-color);
+}
+
+.confirm-modal .btn.primary {
+  background: var(--accent-color);
+  color: white;
+  border-color: var(--accent-color);
+}
+
+.confirm-modal .btn.primary:hover {
+  background: #4338ca;
+  border-color: #4338ca;
+}

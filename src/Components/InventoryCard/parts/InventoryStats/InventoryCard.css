@@ -1,0 +1,56 @@
+/* ================================
+   Inventory Info & Stats
+================================ */
+.InventoryCard .inventory-info {
+  margin-top: auto;
+}
+
+.InventoryCard .inventory-stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 3px;
+  direction: rtl;
+}
+
+/* ================================
+   Stat Item
+================================ */
+.InventoryCard .stat {
+  flex: 1;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ================================
+   Stat Labels & Values
+================================ */
+.InventoryCard .stat-label,
+.InventoryCard .stat-value {
+  width: 100%;
+  padding-block: 5px;
+
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #d8daff25;
+  border-radius: 3px;
+
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Label Styling */
+.InventoryCard .stat-label {
+  margin-bottom: 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Low Stock */
+.InventoryCard .stat-value.low-stock {
+  color: #ff6b6b;
+}
