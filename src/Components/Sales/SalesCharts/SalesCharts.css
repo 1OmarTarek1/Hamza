@@ -1,0 +1,98 @@
+.sales-charts-container {
+  direction: rtl;
+  padding: 1rem;
+}
+
+.charts-title {
+  text-align: center;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.chart-container {
+  background: var(--bg-component);
+  border-radius: 8px;
+  padding-block: 1.5rem;
+  border: 1px solid #f8f9fa34;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chart-container h3 {
+  text-align: center;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.chart-wrapper {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding-inline: 1rem;
+}
+
+
+
+.no-data {
+  text-align: center;
+  padding: 2rem;
+  background: var(--bg-component);
+  border-radius: 8px;
+  color: #6c757d;
+  font-size: 1.1rem;
+}
+
+/* Dark Theme */
+[data-theme="dark"] .chart-container {
+  background: #2d3748;
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .chart-container h3 {
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .no-data {
+  background: #2d3748;
+  color: #a0aec0;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .chart-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .sales-charts-container {
+    padding: 0.5rem;
+  }
+  
+  .chart-container {
+    padding: 1rem;
+  }
+  
+  .chart-wrapper {
+    height: 250px;
+  }
+  
+  .charts-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}

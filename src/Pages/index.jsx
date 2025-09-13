@@ -4,3 +4,4 @@ export { default as AboutUsPage } from './AboutUsPage/AboutUsPage';
 export { default as GalleryPage } from './GalleryPage/GalleryPage';
 export { default as InventoryPage } from './InventoryPage/InventoryPage';
 export { default as ContactPage } from './ContactPage/ContactPage';
+export { default as SalesPage } from './SalesPage/SalesPage';

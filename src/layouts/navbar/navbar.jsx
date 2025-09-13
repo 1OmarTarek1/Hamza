@@ -91,7 +91,7 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li className="navItem">
-            <NavLink to="/Customers" className="navLink" onClick={() => setIsOpen(false)}>
+            <NavLink to="/Sales" className="navLink" onClick={() => setIsOpen(false)}>
               <span className="linkIcn">
                 <GrDocumentPerformance size={18}/>
               </span>

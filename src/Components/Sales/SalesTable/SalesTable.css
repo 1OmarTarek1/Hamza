@@ -216,6 +216,7 @@
 	padding: 12px 10px;
 	font-size: 15px;
 	color: white !important;
+	text-align: center !important;
   }
   
   .table .total-row td:last-child {

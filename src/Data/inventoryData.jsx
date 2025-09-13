@@ -56,19 +56,19 @@ const generateShapes = (count, startId = 1) => {
 const curtainTypes = [
   {
     id: 'type1',
-    name: 'ستائر رومانية',
+    name: 'رومانية',
     description: 'ستائر كلاسيكية أنيقة تناسب جميع أنواع الغرف',
     shapes: generateShapes(10, 1)
   },
   {
     id: 'type2',
-    name: 'ستائر بلاك اوت',
+    name: 'بلاك اوت',
     description: 'ستائر عازلة للضوء والصوت',
     shapes: generateShapes(10, 11)
   },
   {
     id: 'type3',
-    name: 'ستائر شيفون',
+    name: 'شيفون',
     description: 'ستائر خفيفة تسمح بمرور الضوء',
     shapes: generateShapes(10, 21)
   }

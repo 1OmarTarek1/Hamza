@@ -2,16 +2,23 @@ import React, { useMemo, useState, useRef } from 'react';
 import { 
   MainContainer, 
   Toast, 
-  SalesFilters, 
+  SalesSidebar, 
+  FilterToggle, 
   SalesTable, 
   EditSaleModal, 
-  ConfirmModal 
+  ConfirmModal,
+  SalesCharts
 } from '../../Components';
 import { useInventory } from '../../Context/InventoryContext';
-import './CustomersPage.css';
+import { AiOutlineFileSearch } from 'react-icons/ai';
+import { MdFilterListOff } from 'react-icons/md';
+import './SalesPage.css';
 
-const CustomersPage = () => {
+const SalesPage = () => {
 	const { sales, updateSale, deleteSale } = useInventory();
+	
+	// Sidebar state
+	const [sidebarOpen, setSidebarOpen] = useState(false);
 
 	// Filters state
 	const [nameQuery, setNameQuery] = useState('');
@@ -171,16 +178,43 @@ const CustomersPage = () => {
 
 	return (
 		<MainContainer>
-			<div className="customers-page">
+			<div className="sales-page">
 				<Toast 
 					message={toastMsg} 
 					onClose={() => setToastMsg('')} 
 				/>
 				
-				<h1 className="title">سجل العملاء</h1>
+				<div className="page-header">
+					<div className="page-title">سجل المبيعات</div>
+					
+					<div className="rmvFilters" onClick={clearFilters}>
+						<MdFilterListOff />
+					</div>
+					<div className="results-display">
+						<span className="results-number">{rows.length}</span>
+						<AiOutlineFileSearch />
+						{/* <span className="results-label">نتيجة</span> */}
+					</div>
+					
+					
+					<FilterToggle
+						isOpen={sidebarOpen}
+						onToggle={() => setSidebarOpen(!sidebarOpen)}
+					/>
+				</div>
 
-			<div className="table-container">
-				<SalesFilters
+
+				<SalesTable
+					sales={rows}
+					onEdit={openEdit}
+					onDelete={askDelete}
+				/>
+				<SalesCharts sales={rows} />
+
+
+				<SalesSidebar
+					isOpen={sidebarOpen}
+					onClose={() => setSidebarOpen(false)}
 					// Filter values
 					nameQuery={nameQuery}
 					phoneQuery={phoneQuery}
@@ -214,12 +248,6 @@ const CustomersPage = () => {
 					clearFilters={clearFilters}
 					resultsCount={rows.length}
 				/>
-				<SalesTable
-					sales={rows}
-					onEdit={openEdit}
-					onDelete={askDelete}
-				/>
-			</div>
 
 				<EditSaleModal
 					isOpen={editOpen}
@@ -246,4 +274,4 @@ const CustomersPage = () => {
 	);
 };
 
-export default CustomersPage;
+export default SalesPage;

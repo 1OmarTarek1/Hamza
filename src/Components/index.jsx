@@ -10,7 +10,7 @@ export { default as HamburgerBtn } from './HamburgerBtn/HamburgerBtn';
 export { default as GalleryItems } from './GalleryItems/GalleryItems';
 export { default as MainContainer } from './MainContainer/MainContainer';
 export { default as ToTopBtn } from './ToTopBtn/ToTopBtn';
-export { default as ScrollToTop } from './ScrollToTop/ScrollToTop';
+export { default as ScrollToTop } from './Shared/ScrollToTop/ScrollToTop';
 export { default as StarBorder } from './StarBorder/StarBorder';
 
 // GSAP Animations
@@ -26,9 +26,14 @@ export { default as Modal } from './Shared/Modal/Modal';
 
 // Sales Components
 export { default as SalesFilters } from './Sales/SalesFilters/SalesFilters';
+export { default as SalesSidebar } from './Sales/SalesSidebar/SalesSidebar';
+export { default as FilterToggle } from './Sales/FilterToggle/FilterToggle';
 export { default as SalesTable } from './Sales/SalesTable/SalesTable';
 export { default as EditSaleModal } from './Sales/EditSaleModal/EditSaleModal';
 export { default as ConfirmModal } from './Sales/ConfirmModal/ConfirmModal';
+
+// Charts
+export { default as SalesCharts } from './Sales/SalesCharts';
 
 // Export other components as they are added
 // export { default as ComponentName } from './ComponentName/ComponentName';
