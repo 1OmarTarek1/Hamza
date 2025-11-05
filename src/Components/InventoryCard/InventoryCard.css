@@ -1,0 +1,227 @@
+/* ================================
+   Variables
+================================ */
+:root {
+  --overlay-bg: #170d2770;
+  --overlay-shadow: rgba(0, 0, 0, 0.2);
+  --transition-fast: 0.3s ease-in-out;
+  --transition-flip: 0.6s ease;
+}
+
+/* ================================
+   Inventory Card (Base)
+================================ */
+.InventoryCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 10px;
+
+  background: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: default;
+
+  perspective: 1000px; /* 3D flip */
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+/* ================================
+   Card Spotlight (Page Level)
+================================ */
+.InventoryPage .card-spotlight {
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+/* ================================
+   Flip Wrapper
+================================ */
+.InventoryCard .flip-wrapper {
+  position: relative;
+  width: 100%;
+  flex: 1 1 auto;
+
+  transform-style: preserve-3d;
+  transition: transform var(--transition-flip), height 200ms ease;
+  will-change: transform;
+}
+
+.InventoryCard.flipped .flip-wrapper {
+  transform: rotateY(180deg);
+}
+
+/* ================================
+   Flip Faces
+================================ */
+.InventoryCard .flip-face {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  backface-visibility: hidden;
+  pointer-events: none; /* يمنع التفاعل إلا لو الوجه ظاهر */
+}
+
+.InventoryCard .flip-face.front {
+  pointer-events: auto; /* الوجه الأمامي شغال افتراضيًا */
+}
+
+.InventoryCard.flipped .flip-face.front {
+  pointer-events: none; /* لما الكارت يتقلب الأمامي يتعطل */
+}
+
+.InventoryCard.flipped .flip-face.back {
+  pointer-events: auto; /* الوجه الخلفي يشتغل بس لما الكارت متقلب */
+}
+
+.InventoryCard .flip-face.back {
+  transform: rotateY(180deg);
+  background: transparent;
+  color: var(--text-color);
+  border: none;
+  border-radius: 8px;
+}
+
+/* ================================
+   Image Wrapper
+================================ */
+.InventoryCard .CardImgWrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* 1:1 Aspect Ratio */
+
+  overflow: hidden;
+  border-radius: 5px 5px 0 0;
+  margin-bottom: 10px;
+}
+
+.InventoryCard .imgContent {
+  z-index: 1;
+  opacity: 0.7;
+  transition: opacity var(--transition-fast);
+}
+
+.InventoryCard:hover .imgContent {
+  opacity: 1;
+}
+
+.InventoryCard .card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  opacity: 1;
+  cursor: pointer;
+
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+  will-change: transform, opacity;
+}
+
+.InventoryCard .card-image:hover {
+  transform: scale(1.1);
+}
+
+.InventoryCard .card-image.fade-out {
+  opacity: 0;
+}
+
+.InventoryCard .card-image.fade-in {
+  opacity: 1;
+}
+
+/* ================================
+   Card Content
+================================ */
+.InventoryCard .card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================================
+   Type Banner
+================================ */
+.InventoryCard .type {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  padding-block: 10px;
+  text-align: center !important;
+
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+
+  background-color: var(--overlay-bg);
+  backdrop-filter: blur(2px);
+
+  transform: translateY(100%);
+  transition: transform var(--transition-fast);
+
+  box-shadow: 0 -2px 8px var(--overlay-shadow);
+}
+
+.InventoryCard:hover .type {
+  transform: translateY(0%);
+}
+
+/* ================================
+   Shape & Color Labels
+================================ */
+.InventoryCard .shapeName,
+.InventoryCard .color-name {
+  position: absolute;
+  top: 5px;
+
+  display: grid;
+  place-content: center;
+
+  height: 30px;
+  padding-inline: 10px;
+  line-height: 0;
+
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: #f5f5f5;
+
+  border-radius: 3px;
+  background-color: var(--overlay-bg);
+  backdrop-filter: blur(2px);
+
+  box-shadow: 0 0px 8px var(--overlay-shadow);
+}
+
+.InventoryCard .shapeName {
+  left: 5px;
+}
+
+.InventoryCard .color-name {
+  right: 5px;
+}
+
+/* ================================
+   Responsive
+================================ */
+@media (max-width: 768px) {
+  .InventoryCard {
+    padding: 8px;
+  }
+
+  .InventoryCard .type {
+    font-size: 0.75rem;
+    padding-block: 6px;
+  }
+
+  .InventoryCard .shapeName,
+  .InventoryCard .color-name {
+    font-size: 0.65rem;
+    padding-inline: 6px;
+    height: 26px;
+  }
+}

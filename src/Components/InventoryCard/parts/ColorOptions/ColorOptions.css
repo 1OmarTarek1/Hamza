@@ -1,0 +1,80 @@
+/* ================================
+   Color Options Container
+================================ */
+.InventoryCard .color-options {
+  position: absolute;
+  top: 30%;
+  right: 5px;
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 3px !important;
+
+  padding: 2px;
+  border-radius: 3px;
+  background-color: #170d2770;
+  backdrop-filter: blur(2px);
+  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ================================
+   Color Swatches
+================================ */
+.InventoryCard .color-swatch {
+  width: 22px !important;
+  height: 22px !important;
+
+  border-radius: 5px !important;
+  border: 2px solid transparent;
+
+  background-clip: padding-box;
+  cursor: pointer;
+  outline: none;
+
+  position: relative;
+  transform: scale(.9);
+  opacity: .5;
+
+  transition: all .2s ease;
+}
+
+/* Active State */
+.InventoryCard .color-swatch.active {
+  border: 2px solid #8f9fd4c0;
+  transform: scale(1.2);
+  opacity: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+  z-index: 1;
+}
+
+/* Not Filtered */
+.InventoryCard .color-swatch.not-filtered {
+  opacity: .5;
+  transform: scale(.85);
+}
+
+/* Hover (only non-active) */
+.InventoryCard .color-swatch:not(.active):hover {
+  transform: scale(1.05);
+  opacity: .9;
+}
+
+/* Active + Not Filtered */
+.InventoryCard .color-swatch.active.not-filtered {
+  opacity: .8;
+  transform: scale(1.05);
+}
+
+/* Active + Filtered */
+.InventoryCard .color-swatch.active:not(.not-filtered) {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Focus Visible */
+.InventoryCard .color-swatch:focus-visible {
+  outline: none;
+  box-shadow: none;
+}

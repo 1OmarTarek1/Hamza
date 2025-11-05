@@ -1,0 +1,93 @@
+.edit-sale-modal .form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.edit-sale-modal .form-summary {
+  background: var(--muted-color);
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.edit-sale-modal .form-summary div {
+  color: var(--text-color);
+}
+
+.edit-sale-modal .form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.edit-sale-modal .form-row span {
+  font-weight: 600;
+  color: var(--text-color);
+  font-size: 0.9rem;
+}
+
+.edit-sale-modal .form-row input {
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--bg-component);
+  color: var(--text-color);
+  font-size: 0.9rem;
+}
+
+.edit-sale-modal .form-row input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.1);
+}
+
+.edit-sale-modal .error-text {
+  color: #ef4444;
+  font-size: 0.9rem;
+  padding: 8px 12px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 6px;
+}
+
+.edit-sale-modal .actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.edit-sale-modal .btn {
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.edit-sale-modal .btn.secondary {
+  background: var(--bg-component);
+  color: var(--text-color);
+}
+
+.edit-sale-modal .btn.secondary:hover {
+  background: var(--muted-color);
+}
+
+.edit-sale-modal .btn.primary {
+  background: var(--accent-color);
+  color: white;
+  border-color: var(--accent-color);
+}
+
+.edit-sale-modal .btn.primary:hover {
+  background: #4338ca;
+  border-color: #4338ca;
+}

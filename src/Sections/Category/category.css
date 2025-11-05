@@ -1,0 +1,55 @@
+.categoryContainer {
+  position: relative;
+  background-color: var(--bg-component);
+  margin-block: 0;
+  border: 1px solid #ffffff2f;
+  border-radius: 15px;
+  height: 700px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  cursor: grab;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch; /* سلاسة على الموبايل */
+  padding: 2rem;
+}
+
+/* Scrollbar مخفي */
+.categoryContainer::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* حالة drag على الكمبيوتر */
+.dragging {
+  cursor: grabbing;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  touch-action: none; /* مهم لتجنب التفاعل الافتراضي على touch */
+}
+
+/* منع التفاعل مع العناصر أثناء drag */
+.dragging a,
+.dragging div,
+.dragging img {
+  pointer-events: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .categoryContainer {
+    overflow-y: auto;
+    overscroll-behavior: auto; /* يسمح بـ bounce الطبيعي */
+    cursor: default;
+    touch-action: auto; /* يسمح بالـ scroll الطبيعي */
+  }
+}
