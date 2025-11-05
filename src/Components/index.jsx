@@ -3,8 +3,6 @@
 export { default as InventoryCard } from './InventoryCard/InventoryCard';
 export { default as ColorFilter } from './ColorFilter/ColorFilter';
 export { default as TypeFilter } from './TypeFilter/TypeFilter';
-export { default as LanguageSelector } from './LanguageSelector/LanguageSelector';
-export { default as LanguageToggleBtn } from './LanguageToggleBtn/LanguageToggleBtn';
 export { default as ThemeToggle } from './ThemeToggle/ThemeToggle';
 export { default as HamburgerBtn } from './HamburgerBtn/HamburgerBtn';
 export { default as GalleryItems } from './GalleryItems/GalleryItems';
