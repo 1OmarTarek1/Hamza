@@ -215,15 +215,13 @@
 }
 
 /* ===================== */
-/* Actions (Theme + Lang)*/
+/* Actions (Theme)       */
 /* ===================== */
 .navActions {
   display: flex;
   align-items: center;
   gap: .5rem;
 }
-
-
 
 /* ===================== */
 /* Responsive            */
