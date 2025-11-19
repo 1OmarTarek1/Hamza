@@ -1,0 +1,58 @@
+.colorFilter .color-options {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.colorFilter .color-swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 3px;
+  border: 2px solid #ffffff1f;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.colorFilter .color-swatch.active {
+  border-color: var(--primary-color);
+  transform: scale(1.2);
+  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.2);
+}
+
+.colorFilter .color-swatch:not(.active):hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+@media (max-width: 700px) {
+  .colorFilter .color-swatch {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 520px) {
+  .type-filter{
+    width: 100%;
+  }
+  .colorFilter {
+    width: 100%;
+  }
+  .colorFilter .color-options {
+    gap: 1rem;
+    width: 100%;
+    padding-inline: 15px;
+  }
+  .colorFilter  .color-swatch {
+    width: 40px;
+    height: 40px;
+  }
+}

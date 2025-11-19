@@ -1,0 +1,72 @@
+{
+  "app": {
+    "title": "Nayal Tex",
+    "subTitle": "Woven with love"
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Gallery",
+    "contact": "Contact",
+    "inventory": "Inventory",
+    "customers": "Customers",
+    "sales": "Sales"
+  },
+  "footer": {
+    "aboutUs": "About Us",
+    "aboutText": "Your trusted source for high-quality curtains and window treatments.",
+    "quickLinks": "Quick Links",
+    "contactUs": "Contact Us",
+    "email": "Email:",
+    "phone": "Phone:",
+    "address": "Address:",
+    "copyright": "© {{year}} All Rights Reserved"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We'd love to hear from you. Leave us a message and we'll get back to you soon.",
+    "location": "Our Location",
+    "phone": "Phone Number",
+    "email": "Email Address",
+    "hours": "Working Hours",
+    "hours_week": "Saturday - Thursday: 10:00 AM - 6:00 PM",
+    "hours_fri": "Friday: Closed",
+    "form_title": "Send Us a Message",
+    "name": "Full Name",
+    "message": "Your Message",
+    "send": "Send Message"
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Discover our story and what makes us special",
+    "ourStory": "Our Story",
+    "storyP1": "Founded in 2010, our curtain shop offers high-quality window treatments combining elegance and functionality.",
+    "storyP2": "We started as a small family business and grew into a trusted name, with strong focus on details and customer satisfaction.",
+    "mission": "Our Mission",
+    "missionText": "Provide exceptional window solutions that combine quality, style, and functionality.",
+    "vision": "Our Vision",
+    "visionText": "To be the leading provider of innovative window solutions in the region.",
+    "values": "Our Values",
+    "valuesText": "Quality, integrity, and customer satisfaction are at the heart of everything we do.",
+    "team": "Our Team",
+    "member1": "Ahmed Ali",
+    "member1Role": "Founder & CEO",
+    "member2": "Sara Mohamed",
+    "member2Role": "Lead Designer",
+    "member3": "Omar Khaled",
+    "member3Role": "Customer Service"
+  },
+  "common": {
+    "quantity": "Quantity",
+    "buyerName": "Buyer Name",
+    "buyerPhone": "Phone Number",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "supply": "Supply",
+    "sell": "Sell"
+  },
+  "language": {
+    "en": "English",
+    "ar": "العربية"
+  }
+}

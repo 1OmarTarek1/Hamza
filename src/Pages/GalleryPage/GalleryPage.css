@@ -1,0 +1,25 @@
+.GalleryPage {
+  margin: 0 auto;
+}
+.GalleryPage .galleryTitle{
+  background-color: var(--bg-component);
+  color: #fff;
+  text-align: center;
+  padding: 10px 0px 17px 0px;
+  border-radius: 5px;
+  border: 1px solid #ffffff33;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.GalleryPage .GalleryItemsContainerChild
+.imgWrapper img {
+  cursor: pointer;
+}
+.GalleryPage .GalleryItemsContainerChild:hover .imgWrapper:not(:hover) img {
+  filter: brightness(100%) blur(0px);
+} 
+
+
+/* Add your styles here */

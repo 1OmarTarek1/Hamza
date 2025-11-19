@@ -1,0 +1,19 @@
+.languageToggle {
+  display: flex;
+  align-items: center;
+}
+
+.toggleButton {
+  line-height: 0;
+  border: 1px solid #ffffff3b;
+  background-color: transparent;
+  border-radius: 3px;
+  font-size: 18px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #fff;
+}

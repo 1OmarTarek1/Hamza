@@ -1,0 +1,292 @@
+/* Overlay */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Sidebar */
+.sales-sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 400px;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: right 0.3s ease-out;
+  overflow-y: auto;
+  
+  /* Glass effect */
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+}
+
+.sales-sidebar.open {
+  right: 0;
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .sales-sidebar .sales-sidebar {
+  background: rgba(0, 0, 0, 0.3);
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Header */
+.sales-sidebar .sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.sales-sidebar .sidebar-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.sales-sidebar .filter-icon {
+  color: var(--accent-color);
+  font-size: 1.4rem;
+}
+
+.sales-sidebar .close-btn {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sales-sidebar .close-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--accent-color);
+}
+
+/* Content */
+.sales-sidebar .sidebar-content {
+  padding: 20px;
+  flex: 1;
+}
+
+/* Filter Groups */
+.sales-sidebar .filter-group {
+  margin-bottom: 24px;
+}
+
+.sales-sidebar .filter-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 8px;
+}
+
+.sales-sidebar .filter-group input,
+.sales-sidebar .filter-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-color);
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.sales-sidebar .filter-group input:focus,
+.sales-sidebar .filter-group select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.sales-sidebar .filter-group input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.sales-sidebar .filter-group select option {
+  background: var(--bg-component);
+  color: var(--text-color);
+}
+
+/* Range Inputs */
+.sales-sidebar .range-inputs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sales-sidebar .range-inputs input {
+  flex: 1;
+}
+
+.sales-sidebar .range-separator {
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Date Inputs */
+.sales-sidebar .date-inputs {
+  display: flex;
+  gap: 10px;
+}
+
+.sales-sidebar .date-input {
+  flex: 1;
+}
+
+.sales-sidebar .date-input label {
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+}
+
+/* Results Info */
+.sales-sidebar .results-info {
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 20px;
+}
+
+.sales-sidebar .results-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.sales-sidebar .count-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.sales-sidebar .count-text {
+  font-size: 1rem;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+/* Footer */
+.sales-sidebar .sidebar-footer {
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.sales-sidebar .clear-btn {
+  width: 100%;
+  padding: 12px;
+  background: rgba(220, 38, 38, 0.8);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  text-align: center !important;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.sales-sidebar  .clear-btn:hover {
+  background: rgba(220, 38, 38, 1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .sales-sidebar .sales-sidebar {
+    width: 100%;
+    right: -100%;
+  }
+  
+  .sales-sidebar .sidebar-header {
+    padding: 16px;
+  }
+  
+  .sales-sidebar .sidebar-content {
+    padding: 16px;
+  }
+  
+  .sales-sidebar .sidebar-footer {
+    padding: 16px;
+  }
+  
+  .sales-sidebar .date-inputs {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .sales-sidebar .range-inputs {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .sales-sidebar .range-separator {
+    display: none;
+  }
+}
+
+/* Scrollbar Styling */
+.sales-sidebar .sales-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sales-sidebar .sales-sidebar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sales-sidebar .sales-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.sales-sidebar .sales-sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}

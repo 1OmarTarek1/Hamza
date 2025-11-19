@@ -1,0 +1,93 @@
+.filters {
+	background: var(--bg-component);
+	border: 1px solid var(--border-color);
+	border-radius: 10px;
+	padding: 16px;
+	margin-bottom: 16px;
+	box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  }
+  
+  /* الشبكة الأساسية */
+  .filters .filter-row {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 14px;
+	margin-bottom: 14px;
+  }
+  
+  /* الأعمدة */
+  .filters .filter-col {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+  }
+  
+  /* النصوص */
+  .filters .filter-col label {
+	font-size: 0.9rem;
+	font-weight: 600;
+	color: var(--text-color);
+  }
+  
+  /* الحقول */
+  .filters .filter-col input,
+  .filters .filter-col select {
+	flex: 1;
+	padding: 8px 12px;
+	border: 1px solid var(--border-color);
+	border-radius: 6px;
+	background: var(--bg-component);
+	color: var(--text-color);
+	font-size: 0.9rem;
+	transition: all 0.2s ease;
+  }
+  
+  .filters .filter-col input:focus,
+  .filters .filter-col select:focus {
+	outline: none;
+	border-color: var(--accent-color);
+	box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.12);
+  }
+  
+  .filters .filter-col select option {
+	background: var(--bg-component);
+	color: var(--text-color);
+  }
+  
+  /* الأكشنز */
+  .filters .filter-actions {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 12px;
+  }
+  
+  .filters .btn.clear {
+	background: var(--muted-color);
+	color: var(--text-color);
+	border: 1px solid var(--border-color);
+	border-radius: 6px;
+	padding: 8px 14px;
+	cursor: pointer;
+	font-size: 0.9rem;
+	transition: all 0.2s ease;
+  }
+  
+  .filters .btn.clear:hover {
+	background: var(--border-color);
+  }
+  
+  .filters .results-count {
+	font-size: 0.9rem;
+	color: var(--muted-color);
+	font-weight: 500;
+  }
+  
+  /* الموبايل */
+  @media (max-width: 768px) {
+	.filters .filter-actions {
+	  flex-direction: column;
+	  align-items: stretch;
+	}
+  }
+  

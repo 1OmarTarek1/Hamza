@@ -1,0 +1,157 @@
+.sales-page {
+  position: relative;
+  padding: 1rem;
+}
+
+/* Page Header */
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0 24px;
+  padding: 16px 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Sales Header */
+.sales-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.sales-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Results Display */
+.results-display {
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #ffffff13;
+  border-radius: 3px;
+}
+
+.results-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  text-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
+}
+
+.rmvFilters{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff13;
+  padding: 10px 10px;
+  border-radius: 3px;
+  margin-left: 5px;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.rmvFilters:hover{
+  background-color: rgba(137, 43, 226, 0.548);
+  transform: scale(1.01);
+}
+.rmvFilters:active{
+  background-color: rgba(137, 43, 226, 0.445);
+  transform: scale(1);
+}
+
+/* Results Label */
+.results-label {
+  font-size: 1rem;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+/* Page Title */
+.page-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0;
+  flex: 1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Sales Charts Container */
+.sales-charts-container {
+  margin: 2rem 0;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .page-header {
+  background: rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .results-number {
+  text-shadow: 0 0 10px rgba(79, 70, 229, 0.5);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .page-header {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    margin: 16px 0 20px;
+  }
+  
+  .results-display {
+    order: 1;
+    min-width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .page-title {
+    order: 2;
+    font-size: 1.5rem;
+  }
+  
+  .filter-toggle-container {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .sales-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .sales-header h1 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header {
+    padding: 12px;
+  }
+  
+  .page-title {
+    font-size: 1.3rem;
+  }
+}
